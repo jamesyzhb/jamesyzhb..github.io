@@ -281,7 +281,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/11/05/Linux-简单入门/" itemprop="url">Linux--简单入门</a></h1>
+                <a class="post-title-link" href="/2017/11/05/Linux-简单入门/" itemprop="url">Linux</a></h1>
         
 
         <div class="post-meta">
@@ -355,8 +355,77 @@
       
         
           
-            <h5 id="1-命令的概念"><a href="#1-命令的概念" class="headerlink" title="1. 命令的概念"></a>1. 命令的概念</h5><h4 id="简单命令行categories"><a href="#简单命令行categories" class="headerlink" title="简单命令行categories:"></a>简单命令行categories:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">[james@~]$ commond [-option] parameter1 parameter2 ..</div><div class="line">            命令     选项      参数（1）  参数（2）</div><div class="line"> 说明：</div><div class="line">  1 ：一行命令的第一个输入部分绝对是 ‘命令’或‘可执行文件’</div><div class="line">  2 ：commond 为命令的名称，例如切换路径的命令为cd</div><div class="line">  3 ：[] 并不存在于实际的命令中，而加参数设置时，通常参数前带 - 如 -h</div><div class="line">      使用完整参数名时蔡带有 -- 符号 例如 --help</div><div class="line">  4 ：parameter1 parameter2为依附在option后面的参数，或commond的参数</div><div class="line">  5 ：命令，-option，参数等几个命名以空格分开（无论空几个shell都将视为一格）</div><div class="line">  6 ：命令太长可以使用反斜杠（\），来转义[enter]键，使命令连续到下一行</div><div class="line">  其他：</div><div class="line">   a.Linux 严格区分大小写</div></pre></td></tr></table></figure>
-<h5 id="2-基础的命令"><a href="#2-基础的命令" class="headerlink" title="2. 基础的命令"></a>2. 基础的命令</h5><h6 id="显示时间的命令-date"><a href="#显示时间的命令-date" class="headerlink" title="- 显示时间的命令 :date"></a>- 显示时间的命令 :date</h6><h6 id="显示日历的命令-cal"><a href="#显示日历的命令-cal" class="headerlink" title="- 显示日历的命令 :cal"></a>- 显示日历的命令 :cal</h6><h6 id="简单好用的计算器-date"><a href="#简单好用的计算器-date" class="headerlink" title="- 简单好用的计算器:date"></a>- 简单好用的计算器:date</h6><h5 id="3-重要的热键"><a href="#3-重要的热键" class="headerlink" title="3. 重要的热键"></a>3. 重要的热键</h5>
+            <h5 id="man-page"><a href="#man-page" class="headerlink" title="man page"></a>man page</h5><p>1.内部命令：echo<br>查看内部命令帮助：help echo 或者 man echo</p>
+<p>2.外部命令：ls<br>查看外部命令帮助：ls –help 或者 man ls 或者 info ls</p>
+<p>3.man文档的类型(1~9)<br>man 7 man<br>man 5 passwd</p>
+<p>4.快捷键：<br>ctrl + c：停止进程</p>
+<p>ctrl + l：清屏</p>
+<p>ctrl + r：搜索历史命令</p>
+<p>ctrl + q：退出</p>
+<p>5.善于用tab键</p>
+<h6 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h6><p>说明：安装linux时，创建一个itcast用户，然后使用root用户登陆系统</p>
+<p>1。进入到用户根目录<br>cd ~ 或 cd</p>
+<p>2.查看当前所在目录<br>pwd</p>
+<p>3.进入到itcast用户根目录<br>cd ~itcast</p>
+<p>4.返回到原来目录<br>cd -</p>
+<p>5.返回到上一级目录<br>cd ..</p>
+<p>6.查看itcast用户根目录下的所有文件<br>ls -la</p>
+<p>7.在根目录下创建一个itcast的文件夹<br>mkdir /itcast</p>
+<p>8.在/itcast目录下创建src和WebRoot两个文件夹<br>分别创建：mkdir /itcast/src<br>          mkdir /itcast/WebRoot<br>同时创建：mkdir /itcast/{src,WebRoot}</p>
+<p>9.进入到/itcast目录，在该目录下创建.classpath和README文件<br>分别创建：touch .classpath<br>          touch README<br>同时创建：touch {.classpath,README}</p>
+<p>10.查看/itcast目录下面的所有文件<br>ls -la</p>
+<p>11.在/itcast目录下面创建一个test.txt文件,同时写入内容”this is test”<br>echo “this is test” &gt; test.txt</p>
+<p>12.查看一下test.txt的内容<br>cat test.txt<br>more test.txt<br>less test.txt</p>
+<p>13.向README文件追加写入”please read me first”<br>echo “please read me first” &gt;&gt; README</p>
+<p>14.将test.txt的内容追加到README文件中<br>cat test.txt &gt;&gt; README</p>
+<p>15.拷贝/itcast目录下的所有文件到/itcast-bak<br>cp -r /itcast /itcast-bak</p>
+<p>16.进入到/itcast-bak目录，将test.txt移动到src目录下，并修改文件名为Student.java<br>mv test.txt src/Student.java</p>
+<p>17.在src目录下创建一个struts.xml</p>
+<blockquote>
+<p>struts.xml</p>
+</blockquote>
+<p>18.删除所有的xml类型的文件<br>rm -rf *.xml</p>
+<p>19.删除/itcast-bak目录和下面的所有文件<br>rm -rf /itcast-bak</p>
+<p>20.返回到/itcast目录，查看一下README文件有多单词，多少个少行<br>wc -w README<br>wc -l README</p>
+<p>21.返回到根目录，将/itcast目录先打包，再用gzip压缩<br>分步完成：tar -cvf itcast.tar itcast<br>          gzip itcast.tar<br>一步完成：tar -zcvf itcast.tar.gz itcast</p>
+<p>22.将其解压缩，再取消打包<br>分步完成：gzip -d itcast.tar.gz 或 gunzip itcast.tar.gz<br>一步完成：tar -zxvf itcast.tar.gz</p>
+<p>23.将/itcast目录先打包，同时用bzip2压缩，并保存到/tmp目录下<br>tar -jcvf /tmp/itcast.tar.bz2 itcast</p>
+<p>24.将/tmp/itcast.tar.bz2解压到/usr目录下面<br>tar -jxvf itcast.tar.bz2 -C /usr/</p>
+<h6 id="文件相关的命令"><a href="#文件相关的命令" class="headerlink" title="文件相关的命令"></a>文件相关的命令</h6><p> 1.进入到用户根目录<br> cd ~ 或者 cd<br> cd ~hadoop(用户名)<br> 回到原来路径<br> cd -</p>
+<p> 2.查看文件详情<br> stat a.txt</p>
+<p> 3.移动<br> mv a.txt /ect/<br> 改名<br> mv b.txt a.txt<br> 移动并改名<br> mv a.txt ../b.txt</p>
+<p> 4拷贝并改名<br> cp a.txt /etc/b.txt</p>
+<p> 5.vi撤销修改<br> ctrl + u (undo)<br> 恢复<br> ctrl + r (redo)</p>
+<p> 6.名令设置别名(重启后无效)<br> alias ll=”ls -l”<br> 取消<br> unalias ll</p>
+<p> 7.如果想让别名重启后仍然有效需要修改<br> vi ~/.bashrc</p>
+<p> 8.添加用户<br> useradd hadoop<br> passwd hadoop</p>
+<p> 9创建多个文件<br> touch a.txt b.txt<br> touch /home/{a.txt,b.txt}</p>
+<p> 10.将一个文件的内容复制到里另一个文件中<br> cat a.txt &gt; b.txt<br> 追加内容<br> cat a.txt &gt;&gt; b.txt</p>
+<p> 11.将a.txt 与b.txt设为其拥有者和其所属同一个组者可写入，但其他以外的人则不可写入:<br> chmod ug+w,o-w a.txt b.txt</p>
+<p> chmod a=wx c.txt</p>
+<p> 12.将当前目录下的所有文件与子目录皆设为任何人可读取:<br> chmod -R a+r *</p>
+<p> 13.将a.txt的用户拥有者设为users,组的拥有者设为jessie:<br> chown users:jessie a.txt</p>
+<p> 14.将当前目录下的所有文件与子目录的用户的使用者为lamport,组拥有者皆设为users，<br> chown -R lamport:users *</p>
+<p> 15.将所有的java语言程式拷贝至finished子目录中:<br> cp *.java finished</p>
+<p> 16.将目前目录及其子目录下所有扩展名是java的文件列出来。<br> find -name “<em>.java”<br> 查找当前目录下扩展名是java 的文件<br> find -name </em>.java</p>
+<p> 17.删除当前目录下扩展名是java的文件<br> rm -f *.java</p>
+<h6 id="系统命令"><a href="#系统命令" class="headerlink" title="系统命令"></a>系统命令</h6><p>1.查看主机名<br>hostname</p>
+<p>2.修改主机名(重启后无效)<br>hostname hadoop</p>
+<p>3.修改主机名(重启后永久生效)<br>vi /ect/sysconfig/network</p>
+<p>4.修改IP(重启后无效)<br>ifconfig eth0 192.168.12.22</p>
+<p>5.修改IP(重启后永久生效)</p>
+<p>vi /etc/sysconfig/network-scripts/ifcfg-eth0</p>
+<p>6.查看系统信息<br>uname -a<br>uname -r</p>
+<p>7.查看ID命令<br>id -u<br>id -g</p>
+<p>8.日期<br>date<br>date +%Y-%m-%d<br>date +%T<br>date +%Y-%m-%d” “%T</p>
+<p>9.日历<br>cal 2012</p>
+<p>10.查看文件信息<br>file filename</p>
+<p>11.挂载硬盘<br>mount<br>umount<br>加载windows共享<br>mount -t cifs //192.168.1.100/tools /mnt</p>
+<p>12.查看文件大小<br>du -h<br>du -ah</p>
+<p>13.查看分区<br>df -h</p>
+<p>14.ssh<br>ssh hadoop@192.168.1.1</p>
+<p>15.关机<br>shutdown -h now /init 0<br>  shutdown -r now /reboot(重启)</p>
+
           
         
       
